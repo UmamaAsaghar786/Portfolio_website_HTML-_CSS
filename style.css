@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  z-index: 3;
+}
+
+.loader {
+  /* display: none; */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.loader h1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4vw;
+  font-weight: 500;
+}
+
+.highlight {
+  color: #14CF93;
+  font-family: 'Great Vibes', cursive;
+}
+
+.reveal .parent {
+  display: block;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.reveal .parent .child {
+  display: block;
+}
+
+.child span {
+  display: inline-block;
+}
+
+.green {
+  /* display: none; */
+  position: fixed;
+  top: 100%;
+  height: 0vh;
+  width: 100%;
+  background-color: #14CF93;
+  z-index: 2;
+}
+
+.home {
+  width: 100%;
+  height: 170vh;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  position: relative;
+  font-family: sans-serif;
+  z-index: 1;
+}
+
+.home .nav {
+  width: 100%;
+  height: 11vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  top: 0;
+}
+
+
+.nav a {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 530;
+  font-size: 15px;
+  color: black;
+}
+
+.nav a:hover {
+  color: white;
+}
+
+.nav a .line {
+  position: absolute;
+  bottom: 0;
+  display: inline block;
+  /*because span tag pr hum width nai de skta so we make it inline block-->*/
+  height: 1px;
+  background-color: black;
+}
+
+#line1 {
+  left: 0;
+  width: 0%;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  transition-delay: .1s;
+}
+
+#line2 {
+  right: 0;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  width: 100%;
+}
+
+.nav a:hover #line2 {
+  width: 0%;
+}
+
+.nav a:hover #line1 {
+  width: 100%;
+}
+
+button {
+  background: linear-gradient(to right, rgb(0, 235, 143) 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  transition: background-position 0.4s ease, color 0.4s ease;
+  border-radius: 25px;
+  width: 10vw;
+  height: 5vh;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button:hover {
+  background-position: left;
+  color: white;
+}
+.row1{
+  position: absolute;
+  margin-top: 5vw;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.row1 h1{
+  margin-top: 6vw;
+  margin-left: 5vw;
+  font-size: 8vw;
+  font-weight: 600;
+  color: black;
+  line-height: 1;
+}
+.row1 .text1{
+  margin-top: 3vw;
+  margin-left: 20vw;
+}
+.row1 .text2{
+  margin-top: 3vw;
+  margin-left: 5vw;
+}
+.row1 h5{
+  opacity: .4;
+  font-size: 15px;
+  font-weight: 600;
+}
+.row2{
+  position: absolute;
+  margin-top: 20vw;
+  display: inline-block;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 40vw;
+}
+.row2 h1{
+  font-size: 8vw;
+  font-weight: 600;
+  color:black;
+  line-height: 1;
+}
+.AI{
+  color: #14CF93;
+  /* font-family: 'Great Vibes', cursive; */
+  display: inline-block;           /* Required for animation */
+  transform: translateX(0);        /* Start at original position */
+  opacity: 1;                      /* Fully visible */
+  animation: hideText 3s infinite;     /* Animate each letter infinitely */
+}
+.AI span:nth-child(1){ animation-delay: 2.0s;}
+.AI span:nth-child(2){ animation-delay: 2.1s;}
+@keyframes hideText{
+  0%, 40%{
+      transform: translateX(0);
+      opacity: 1;
+  }
+  50%{
+      transform: translateX(-10px);       /* Move text slightly left */
+      opacity: 0;
+  }
+  100%{
+      transform: translateX(0);             /* Reset position */
+      opacity: 1;
+  }
+}
+
+.imagery{
+  width: 100%;
+  bottom: 22%;
+  padding: 0 4vw;
+  color: #36454F;
+  font-size: 1vw;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+.img-left{
+  width: 35%;
+  height: 100%;
+}
+.imagery h1{
+  font-weight: 100;
+}
+.img-right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 75%;
+  height: 100%;
+  /* background-color: yellow; */
+}
+.img-right .img-cont{
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 25vw;
+  height: 75vh;
+  background-color: red;
+  border-radius: 25px;
+  overflow: visible;
+  z-index: 999;
+  filter: grayscale();
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+.img-cont:hover{
+  filter: grayscale(0);
+}
+.img-right .img-cont:nth-child(1){
+  transform:translate(-60%,-25%) rotate(-10deg);
+  background-image: url(https://images.unsplash.com/photo-1581403341630-a6e0b9d2d257?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+}
+.img-right .img-cont:nth-child(2){
+  transform:translate(-30%,-15%) rotate(-5deg);
+  background-image: url(https://images.unsplash.com/photo-1539614474468-f423a2d2270c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+}
+.img-right .img-cont:nth-child(3){
+  transform:rotate(1deg);
+  background-image: url(https://plus.unsplash.com/premium_photo-1683140840845-073fa9638261?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+}
+.home h2{
+  color: black;
+  position: absolute;
+  bottom: 15vh;
+  left: 5vw;
+  font-family: sans-serif;
+  font-weight: 525;
+  color: #36454F;
+}
+.work{
+  position: relative;
+  width: 100%;
+  min-height: 200vh;
+  background-color:#F2F2F2;
+}
+.work .workrow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12vw;
+}
+.workrow h1{
+  font-size: 10vw;
+  display: flex;
+  align-items: baseline;
+  margin-top: 3vh;
+  font-family: sans-serif;
+  font-weight: 200;
+}
+.o-ui-arrow{
+  transform: rotate(90deg);
+}
+.o-ui-arrow path{
+  stroke: #14CF93;
+  width: 5vw;
+}
+.workrow h1 .mini{
+  font-size: 2vw;
+  margin-left: 4vw;
+}
+.images{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around; 
+  margin-top: 6vw;
+}
+.cont{
+  overflow: hidden;
+  border-radius: 5%;
+}
+.cont1{
+  width:45%;
+}
+
+.cont img{
+  width: 105%;
+}
+.cont2{
+  width: 28%;
+}
+
+
+
+
+
